@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pumpkin Store</title>
+    <link rel="stylesheet" type="text/css" href="inner.css">
+</head>
+
+<body>
+    <div class="modal-content">
+        <h2>Do you agree to redirect back?</h2>
+        <button id="agree-btn" onclick="requestStoragePermission()">Agree</button>
+    </div>
+
+    <script>
+        async function requestStoragePermission() {
+            var res = await navigator.permissions.query({ name: 'storage-access' })
+
+            console.log("nav req:", res)
+            //console.log("nav req:", await res)
+            await document.requestStorageAccess()
+        }
+    </script>
+    <script>
+        async function f() {
+            var access = await document.hasStorageAccess()
+
+            console.log("iframe log")
+            console.log("hasStorageAccess: ", access)
+
+            var res = await navigator.permissions.query({ name: 'storage-access' })
+            console.log("storage-access req:", res)
+            //console.log("nav req:", await res)
+
+            document.requestStorageAccess()
+
+            var access2 = await document.hasStorageAccess()
+            console.log("hasStorageAccess2: ", access2)
+
+        }
+        f()
+    </script>
+</body>
+
+</html>

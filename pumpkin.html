@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pumpkin Store</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- CMP Stub -->
+    <script>
+        "use strict"; !function () { var e = function () { var e, t = "__tcfapiLocator", a = [], n = window; for (; n;) { try { if (n.frames[t]) { e = n; break } } catch (e) { } if (n === window.top) break; n = n.parent } e || (!function e() { var a = n.document, r = !!n.frames[t]; if (!r) if (a.body) { var s = a.createElement("iframe"); s.style.cssText = "display:none", s.name = t, a.body.appendChild(s) } else setTimeout(e, 5); return !r }(), n.__tcfapi = function () { for (var e, t = arguments.length, n = new Array(t), r = 0; r < t; r++)n[r] = arguments[r]; if (!n.length) return a; if ("setGdprApplies" === n[0]) n.length > 3 && 2 === parseInt(n[1], 10) && "boolean" == typeof n[3] && (e = n[3], "function" == typeof n[2] && n[2]("set", !0)); else if ("ping" === n[0]) { var s = { gdprApplies: e, cmpLoaded: !1, cmpStatus: "stub" }; "function" == typeof n[2] && n[2](s) } else a.push(n) }, n.addEventListener("message", (function (e) { var t = "string" == typeof e.data, a = {}; try { a = t ? JSON.parse(e.data) : e.data } catch (e) { } var n = a.__tcfapiCall; n && window.__tcfapi(n.command, n.version, (function (a, r) { var s = { __tcfapiReturn: { returnValue: a, success: r, callId: n.callId } }; t && (s = JSON.stringify(s)), e && e.source && e.source.postMessage && e.source.postMessage(s, "*") }), n.parameter) }), !1)) }; "undefined" != typeof module ? module.exports = e : e() }();
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div id="ad-slot"></div>
+
+        <h1>Welcome to the Pumpkin Store</h1>
+
+        <ul>
+            <li><img src="assets/pumpkin1.png" alt="Pumpkin 1">
+                <h2>Pumpkin 1</h2>
+                <p>Description of Pumpkin 1</p>
+            </li>
+            <li><img src="assets/pumpkin2.jpg" alt="Pumpkin 2">
+                <h2>Pumpkin 2</h2>
+                <p>Description of Pumpkin 2</p>
+            </li>
+            <li><img src="assets/pumpkin3.jpg" alt="Pumpkin 3">
+                <h2>Pumpkin 3</h2>
+                <p>Description of Pumpkin 3</p>
+            </li>
+            <li><img src="assets/pumpkin4.webp" alt="Pumpkin 4">
+                <h2>Pumpkin 4</h2>
+                <p>Description of Pumpkin 4</p>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2023 Pumpkin Store</p>
+    </footer>
+</body>
+<script async type="text/javascript"
+    src='https://cmp.quantcast.com/choice/Vy6kheBAL7RRt/anonymised.io/choice.js?tag_version=V2'></script>
+<script async type="text/javascript" src="bundle.js">
+</script>
+
+</html>
