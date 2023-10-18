@@ -17,9 +17,7 @@ window.__tcfapi('addEventListener', 2, (tcData, success) => {
         const anonymised = document.getElementById('anonymised');
         anonymised.style.backgroundColor = 'rgba(33, 41, 52, 0.75)';
         anonymised.style.display = 'flex';
-        anonymised.style.webkitBoxAlign = 'center';
         anonymised.style.alignItems = 'center';
-        anonymised.style.webkitBoxPack = 'center';
         anonymised.style.justifyContent = 'center';
         anonymised.style.height = '707px';
         anonymised.style.width = '100vw';
@@ -41,5 +39,18 @@ window.__tcfapi('addEventListener', 2, (tcData, success) => {
         anonymised.style.listStyleType = 'disc';
     }
 })
+
+async function impressionTrackerMessageHandler(event) {
+    if (event.data?.from === 'anonymised-iframe') {
+        var storageAccessState = event.data['storage-access-state']
+        console.log('message from iframe:', storageAccessState)
+
+        const anonymised = document.getElementById('anonymised');
+        anonymised.removeChild(anonymised.firstChild);
+        anonymised.style = '';
+    }
+}
+
+window.addEventListener('message', impressionTrackerMessageHandler)
 
 // (success && tcData.eventStatus === 'useractioncomplete') 

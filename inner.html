@@ -17,8 +17,13 @@
             var res = await navigator.permissions.query({ name: 'storage-access' })
 
             console.log("nav req:", res)
-            //console.log("nav req:", await res)
             await document.requestStorageAccess()
+
+            const message = {
+                from: 'anonymised-iframe',
+                'storage-access-state': res.state
+            }
+            window.top.postMessage(message, '*')
         }
     </script>
     <script>
@@ -36,7 +41,6 @@
 
             var access2 = await document.hasStorageAccess()
             console.log("hasStorageAccess2: ", access2)
-
         }
         f()
     </script>
