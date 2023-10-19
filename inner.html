@@ -8,7 +8,7 @@
 
 <body>
     <div class="modal-content">
-        <h2>Please provide storage access to advertising partner</h2>
+        <h4>Please provide storage access to advertising partner</h4>
         <button id="agree-btn" onclick="requestStoragePermission()">Agree</button>
     </div>
 
@@ -24,6 +24,12 @@
                 'storage-access-state': res.state
             }
             window.top.postMessage(message, '*')
+
+            console.log('set ifrme cookie pak');
+            //document.cookie = "anonymised=pak; SameSite=Lax; Secure; path=/; domain=example.com; partition=myPartition";
+            document.cookie = "anonymised=pak; Secure; Path=/; SameSite=None; Partitioned;";// __Host-name=value;
+
+            console.log('iframe cookie:', document.cookie);
         }
     </script>
     <script>
@@ -41,6 +47,8 @@
 
             var access2 = await document.hasStorageAccess()
             console.log("hasStorageAccess2: ", access2)
+
+            
         }
         f()
     </script>

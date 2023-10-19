@@ -1,3 +1,5 @@
+console.log('top domain cookie:', document.cookie);
+
 window.__tcfapi('addEventListener', 2, (tcData, success) => {
     console.log(tcData, success)
 
@@ -8,7 +10,10 @@ window.__tcfapi('addEventListener', 2, (tcData, success) => {
         console.log('loadong iframe');
         var iframe = document.createElement('iframe');
         iframe.src = location.hostname === 'localhost'
-            ? 'inner.html' : 'https://dennyd-test-sand-lwvpr3pb6a-ew.a.run.app/inner.html'
+            ? 'inner.html' : 'https://id-ward.github.io/cmp-redirect-demo/inner.html'
+
+        //iframe.src = 'https://id-ward.github.io/cmp-redirect-demo/inner.html'
+
         iframe.title = 'some description';
         iframe.sandbox = 'allow-storage-access-by-user-activation allow-scripts allow-same-origin';
 
